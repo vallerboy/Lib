@@ -58,7 +58,7 @@ public class Main {
                 break;
             }
             case "exit":{
-                //tutaj bedzie logika zapisywania
+                Utils.saveBooksToFile(Paths.get("books.txt"), bookList);
                 break;
             }
             default: {
@@ -105,6 +105,13 @@ public class Main {
 
         System.out.print("Tytuł: ");
         title = scanner.nextLine();
+
+        for (Book book : bookList) {
+            if(book.getName().equalsIgnoreCase(title)){
+                System.out.println("Taka ksiazka juz istnieje!");
+                return;
+            }
+        }
 
         System.out.print("Autor: ");
         author = scanner.nextLine();

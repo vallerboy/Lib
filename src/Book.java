@@ -55,4 +55,9 @@ public class Book {
     public void setRentStatus(int rentStatus) {
         this.rentStatus = rentStatus;
     }
+
+    @Override
+    public String toString() {
+        return name + ":" + author + ":" + pages + ":" + produceYear + ":" + rentStatus;
+    }
 }
