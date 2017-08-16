@@ -42,6 +42,11 @@ public class Main {
     private void parseChoice(String command) {
         switch (command){
             case "4": {
+                for (Book book : bookList) {
+                    if(book.getRentStatus() == 0){
+                        System.out.println("Wolna pozycja: " + book.getName());
+                    }
+                }
 
                 break;
             }
